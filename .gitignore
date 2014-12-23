@@ -1,4 +1,4 @@
-############# App specific for Shorty######################
+############# App specific files to ignore######################
 config/auth.js
 config/database.js
 
