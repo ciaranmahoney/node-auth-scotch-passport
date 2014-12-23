@@ -1,22 +1,22 @@
 // get all tools we need =============================
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 8080;
-var mongoose = require('mongoose');
-var passport = require('passport');
-var flash = require('connect-flash');
+var express         = require('express');
+var app             = express();
+var port            = process.env.PORT || 8080;
+var mongoose        = require('mongoose');
+var passport        = require('passport');
+var flash           = require('connect-flash');
 
-var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var session = require('express-session');
+var morgan          = require('morgan');
+var cookieParser    = require('cookie-parser');
+var bodyParser      = require('body-parser');
+var session         = require('express-session');
 
-var configDB = require('./config/database.js');
+var configDB        = require('./config/database.js');    
 
 // configuration =====================================
 mongoose.connect(configDB.url); // connects to DB
 
-// require('./config/passport.js')(passport); //pass passport for configuration
+require('./config/passport.js')(passport); //pass passport for configuration
 
 // setup express application
 app.use(morgan('dev')); // logs every request to console
